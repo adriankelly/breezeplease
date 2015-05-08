@@ -3,4 +3,6 @@ node_modules/
 apikey.rtf
 .DS_Store
 .gitignore
-build/
+build/*
+*.sketch
+server/
