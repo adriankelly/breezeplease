@@ -2,3 +2,4 @@
 node_modules/
 apikey.rtf
 .DS_Store
+.gitignore
