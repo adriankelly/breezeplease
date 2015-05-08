@@ -2,18 +2,35 @@
 <html data-ng-app="windApp">
 
 <head>
-	<title>Is it windy</title>
+	<title>Breeze Please</title>
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="app/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="app/css/style.css">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#87ceeb">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-	<div class="container" data-ng-controller="AppController" ng-cloak>
+	<div class="container" data-ng-controller="AppController" data-ng-cloak>
 
 		<!-- Clouds -->
-		<div class="cloud-wrap" ng-class="cloudSpeed(currentWindSpeed)">
+		<div class="cloud-wrap" data-ng-class="cloudSpeed(currentWindSpeed)">
 			<div class="cloud1 cloud-shape"></div>
 			<div class="cloud2 cloud-shape"></div>
 			<div class="cloud3 cloud-shape"></div>
@@ -31,7 +48,7 @@
 						<div class="pole-gradient"></div>
 					</div> <!-- .pole -->
 					<div class="generator"></div>
-					<div class="rotor" ng-class="bladeSpeed(currentWindSpeed)">
+					<div class="rotor" data-ng-class="bladeSpeed(currentWindSpeed)">
 						<div class="blades"></div>
 						<div class="blades"></div>
 						<div class="blades"></div>
@@ -48,7 +65,7 @@
 						<div class="pole-gradient"></div>
 					</div> <!-- .pole -->
 					<div class="generator"></div>
-					<div class="rotor" ng-class="bladeSpeed(currentWindSpeed)">
+					<div class="rotor" data-ng-class="bladeSpeed(currentWindSpeed)">
 						<div class="blades"></div>
 						<div class="blades"></div>
 						<div class="blades"></div>
@@ -65,7 +82,7 @@
 						<div class="pole-gradient"></div>
 					</div> <!-- .pole -->
 					<div class="generator"></div>
-					<div class="rotor" ng-class="bladeSpeed(currentWindSpeed)">
+					<div class="rotor" data-ng-class="bladeSpeed(currentWindSpeed)">
 						<div class="blades"></div>
 						<div class="blades"></div>
 						<div class="blades"></div>
@@ -85,20 +102,20 @@
 				<h1>Is it windy in...</h1>
 
 				<!-- Input field -->
-				<form phone-submit>
+				<form data-phone-submit>
 				<div class="input-group input-group-lg">
-					<input id="location"  class="form-control" type="search" placeholder="e.g. Wellington" onkeydown="if (event.keyCode == 13) document.getElementById('goBtn').click()" onfocus="this.value='';" ng-click="showAlert=true" ng-model="locationName" autofocus>
+					<input id="location"  class="form-control" type="search" placeholder="e.g. Wellington" onkeydown="if (event.keyCode == 13) document.getElementById('goBtn').click()" onfocus="this.value='';" data-ng-click="showAlert=true" data-ng-model="locationName" autofocus>
 
 					<!-- Go button -->
 					<span class="input-group-btn">
-						<button type="button" id="goBtn" class="btn btn-success" ng-click="angular.element('.clear-on-click').detach()" ng-disabled="!(!!locationName)">Go!</button>
+						<button type="button" id="goBtn" class="btn btn-success" data-ng-click="angular.element('.clear-on-click').detach()" data-ng-disabled="!(!!locationName)">Go!</button>
 					</span> <!-- .input-group-btn -->
 				</div> <!-- .input-group .input-group-lg -->
 				</form>
 				<!-- Speed unit selection button -->
-				<div class="btn-group btn-group-lg pull-right m-top10 unit-btn" ng-init="button = 'kph'">
-					<a href="javascript:void(0)" ng-click="button = 'kph'" ng-class="{ 'active' : button == 'kph' }" class="btn btn-primary rmv-bdr">kph</a>
-					<a href="javascript:void(0)" ng-click="button = 'mph'" ng-class="{ 'active' : button == 'mph' }" class="btn btn-primary rmv-bdr">mph</a>
+				<div class="btn-group btn-group-lg pull-right m-top10 unit-btn" data-ng-init="button = 'kph'">
+					<a href="javascript:void(0)" data-ng-click="button = 'kph'" data-ng-class="{ 'active' : button == 'kph' }" class="btn btn-primary rmv-bdr">kph</a>
+					<a href="javascript:void(0)" data-ng-click="button = 'mph'" data-ng-class="{ 'active' : button == 'mph' }" class="btn btn-primary rmv-bdr">mph</a>
 				</div> <!-- .btn-group .btn-group .btn-group-lg .pull-right .m-top10 .unit-btn -->
 
 			</div> <!-- .col-xs-12 .col-sm-8 -->
@@ -110,24 +127,24 @@
 			<div class="col-md-10">
 
 				<!-- Speed display - KPH -->
-				<div ng-show="true" ng-hide="button == 'mph'">
-					<h3 class="inline-b clear-on-click" ng-show="showDecision">The current wind speed in {{ foundLocation.city }}, {{ foundLocation.region }} {{ foundLocation.country }} is... <span class="speed-display"><a href="https://www.yahoo.com/?ilc=401.">{{ currentWindSpeed | changeToKph }}{{ kph }}&nbsp</a></span></h3>
+				<div data-ng-show="true" data-ng-hide="button == 'mph'">
+					<h3 class="inline-b clear-on-click" data-ng-show="showDecision">The current wind speed in {{ foundLocation.city }}, {{ foundLocation.region }} {{ foundLocation.country }} is... <span class="speed-display"><a href="https://www.yahoo.com/?ilc=401.">{{ currentWindSpeed | changeToKph }}{{ kph }}&nbsp;</a></span></h3>
 				</div>
 
 
 				<!-- Speed display - MPH -->
-				<div ng-show="button == 'mph'">
-					<h3 class="inline-b clear-on-click" ng-show="showDecision">The current wind speed in {{ foundLocation.city }}, {{ foundLocation.region }} {{ foundLocation.country }} is... <span class="speed-display" > {{ currentWindSpeed }}{{ mph }}</span></h3>
+				<div data-ng-show="button == 'mph'">
+					<h3 class="inline-b clear-on-click" data-ng-show="showDecision">The current wind speed in {{ foundLocation.city }}, {{ foundLocation.region }} {{ foundLocation.country }} is... <span class="speed-display" > {{ currentWindSpeed }}{{ mph }}</span></h3>
 				</div>
 
 			</div> <!-- .col-md-10 -->
 		</div> <!-- .row -->
 
 		<!-- Couldn't find location -->
-		<div class="alert alert-danger col-xs-12 col-sm-6 top10" role="alert" ng-show="showError">Sorry, we couldn't find the wind speed for that location.</div>
+		<div class="alert alert-danger col-xs-12 col-sm-6 top10" role="alert" data-ng-show="showError">Sorry, we couldn't find the wind speed for that location.</div>
 
 		<!-- API attribution -->
-		<a href="https://www.yahoo.com/?ilc=401" target="_blank" class="yahoo-attr"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a>
+		<a href="https://www.yahoo.com/?ilc=401" target="_blank" class="yahoo-attr"> <img src="https://poweredby.yahoo.com/white.png" alt="Powered by Yahoo" width="134" height="29"/> </a>
 
 	</div> <!-- .container --> <!-- End of AppController -->
 
